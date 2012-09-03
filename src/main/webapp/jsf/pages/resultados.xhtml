@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+                <p:dataTable var="jugador" value="#{calculoBean.jugadores}">
+                    <p:column headerText="Nombre Jugador">
+                        <h:outputText value="#{jugador.nombre}" />
+                    </p:column>
+                    <p:column headerText="ELO">
+                        <h:outputText value="#{jugador.elo}" />
+                    </p:column>
+                    <p:column headerText="N. Partidas">
+                        <h:outputText value="#{jugador.numPartidas}" />
+                    </p:column>
+
+                </p:dataTable>
+                
+                <p:commandButton ajax="false" value="Volver" action="volver" />
+            </h:form>
+    </h:body>
+</html>
+
