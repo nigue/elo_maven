@@ -1,4 +1,4 @@
-package coreservlets;
+package coreservlets.web;
 
 import java.io.File;
 import java.io.FileInputStream;

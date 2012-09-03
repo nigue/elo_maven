@@ -1,4 +1,4 @@
-package coreservlets;
+package coreservlets.web;
 
 import java.io.FileWriter;
 import java.io.StringReader;

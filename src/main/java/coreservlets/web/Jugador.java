@@ -1,4 +1,4 @@
-package coreservlets;
+package coreservlets.web;
 
 public class Jugador implements Comparable<Jugador> {
 
