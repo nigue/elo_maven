@@ -42,7 +42,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           p:dataSource-ref="dataSource"
           p:jpaVendorAdapter-ref="jpaAdapter">
-        <property name="persistenceUnitName" value="mechonPU" />
+        <property name="persistenceUnitName" value="elo_mavenPU" />
     </bean>
 
     <bean id="jpaAdapter"

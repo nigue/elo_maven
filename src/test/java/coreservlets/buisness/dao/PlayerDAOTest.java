@@ -24,8 +24,7 @@ public class PlayerDAOTest {
     public void playerTestDAO() {
         LOGGER.debug("Inicio de TEST");
         Player player = new Player();
-        player.setName("player1");
-        player.setAge(21);
+        player.setName("alfredin");
         playerDAO.persist(player);
         List<Player> players = playerDAO.findAll();
         Assert.assertFalse(players.isEmpty());
