@@ -5,7 +5,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 
 @Embeddable
-public class PlayerBattleId implements Serializable {
+public class PlayerBattleId  extends PersistentIdEntity implements Serializable {
 
     private Player player;
     private Battle battle;
