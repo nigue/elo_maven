@@ -1,6 +1,7 @@
 package coreservlets.buisness.dao;
 
 import coreservlets.business.dao.PlayerDAO;
+import coreservlets.business.model.Battle;
 import coreservlets.business.model.Player;
 import java.util.List;
 import javax.annotation.Resource;
@@ -25,6 +26,8 @@ public class PlayerDAOTest {
         LOGGER.debug("Inicio de TEST");
         Player player = new Player();
         player.setName("alfredin");
+        Battle battle = new Battle();
+        
         playerDAO.persist(player);
         List<Player> players = playerDAO.findAll();
         Assert.assertFalse(players.isEmpty());
