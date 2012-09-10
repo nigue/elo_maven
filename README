@@ -1,0 +1,20 @@
+ELO_Maven
+
+---> Branch one_table (only a one table with all info)
+
+A simple elo points form many players of a kof game, in my office.
+
+This is a maven proyect based in MVC model.
+
+Contains:
+
+1) Primefaces
+2) Spring
+3) Hibernate
+
+Other contains (I do not remember all)
+
+1) log4j
+2) MySql
+3) deploy - NetBeans/Tomcat
+4) ....
