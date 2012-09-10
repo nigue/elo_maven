@@ -23,6 +23,10 @@
             <from-outcome>resultados</from-outcome>
             <to-view-id>/jsf/pages/resultados.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>ingreso</from-outcome>
+            <to-view-id>/jsf/pages/ingreso.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
