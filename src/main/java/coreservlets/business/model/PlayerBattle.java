@@ -1,5 +1,6 @@
 package coreservlets.business.model;
 
+import java.io.Serializable;
 import javax.persistence.AssociationOverride;
 import javax.persistence.AssociationOverrides;
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ import javax.persistence.Transient;
     @AssociationOverride(name = "pk.player",
     joinColumns =
     @JoinColumn(name = "PLAYER_ID"))})
-public class PlayerBattle extends PersistentIdEntity {
+public class PlayerBattle implements Serializable {
 
     private PlayerBattleId pk = new PlayerBattleId();
     private boolean victory;
@@ -40,7 +41,7 @@ public class PlayerBattle extends PersistentIdEntity {
         return getPk().getPlayer();
     }
 
-    public void serPlayer(Player player) {
+    public void setPlayer(Player player) {
         getPk().setPlayer(player);
     }
 

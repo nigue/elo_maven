@@ -1,8 +1,11 @@
 package coreservlets.buisness.dao;
 
+import coreservlets.business.dao.BattleDAO;
+import coreservlets.business.dao.PlayerBattleDAO;
 import coreservlets.business.dao.PlayerDAO;
 import coreservlets.business.model.Battle;
 import coreservlets.business.model.Player;
+import coreservlets.business.model.PlayerBattle;
 import java.util.List;
 import javax.annotation.Resource;
 import org.apache.log4j.Logger;
@@ -20,13 +23,27 @@ public class PlayerDAOTest {
     
     @Resource(name = "playerDAO")
     private PlayerDAO playerDAO;
+    @Resource(name = "battleDAO")
+    private BattleDAO battleDAO;
+    @Resource(name = "playerBattleDAO")
+    private PlayerBattleDAO playerBattleDAO;
 
     @Test
     public void playerTestDAO() {
-        LOGGER.debug("Inicio de TEST");
+        LOGGER.debug("/////////////Inicio de TEST");
+        
         Player player = new Player();
-        player.setName("alfredin");
+        player.setName("kyo");
+        
         Battle battle = new Battle();
+        
+        PlayerBattle playerBattle = new PlayerBattle();
+        playerBattle.setPlayer(player);
+        playerBattle.setBattle(battle);
+        
+        playerDAO.persist(player);
+        battleDAO.persist(battle);
+        playerBattleDAO.persist(playerBattle);
         
         playerDAO.persist(player);
         List<Player> players = playerDAO.findAll();
