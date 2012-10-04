@@ -24,5 +24,4 @@ public abstract class GeneratedIdEntity extends IdEntity {
     public void setId(Long id) {
         this.id = id;
     }
-
 }
