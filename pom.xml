@@ -113,7 +113,7 @@
     <build>
         <finalName>elo_maven</finalName>
         
-        <plugins>
+       <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -122,11 +122,28 @@
                     <skipTests>${skipTests}</skipTests>
                 </configuration>
             </plugin>
+            <!-- Maven Tomcat Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <configuration>
+                    <url>${deployUrl}</url>
+                    <server>tomcat</server>
+                    <path>/spring_11</path>
+                </configuration>
+            </plugin>
+            <!-- Maven compiler plugin -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
         </plugins>
-        
     </build>
     <properties>
         <skipTests>false</skipTests>
-        <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
+        <deployUrl>http://127.0.0.1:8080/manager</deployUrl>
     </properties>
 </project>
