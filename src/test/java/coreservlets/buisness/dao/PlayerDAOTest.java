@@ -29,6 +29,12 @@ public class PlayerDAOTest {
         LOGGER.debug("/////////////Inicio de TEST");
         
         Player player = new Player();
+        player.setId(new Long(1));
+        player.setName("kyo");
+        playerDAO.persist(player);
+        player.setId(new Long(2));
+        player.setName("leona");
+        playerDAO.persist(player);
         
         Battle battle = new Battle();
 
