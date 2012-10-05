@@ -143,6 +143,6 @@
     </build>
     <properties>
         <skipTests>true</skipTests>
-        <deployUrl>http://127.0.0.1:8080/manager</deployUrl>
+        <deployUrl>http://localhost:8080/manager</deployUrl>
     </properties>
 </project>
