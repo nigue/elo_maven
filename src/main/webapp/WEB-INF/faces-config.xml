@@ -16,12 +16,12 @@
     <navigation-rule>
         <from-view-id>/jsf/welcome.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>insert</from-outcome>
-            <to-view-id>/jsf/pages/insert.xhtml</to-view-id>
+            <from-outcome>add_player</from-outcome>
+            <to-view-id>/jsf/pages/add-player.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>resultados</from-outcome>
-            <to-view-id>/jsf/pages/resultados.xhtml</to-view-id>
+            <from-outcome>add_battle</from-outcome>
+            <to-view-id>/jsf/pages/add-battle.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     

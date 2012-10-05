@@ -5,7 +5,12 @@ import coreservlets.business.model.IdEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import org.springframework.transaction.annotation.Transactional;
 
 public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
@@ -20,6 +25,7 @@ public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
     }
 
     @Transactional
+    @Override
     public T persist(T object) {
         T result = null;
         if (object != null) {
@@ -30,6 +36,7 @@ public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
     }
 
     @Transactional
+    @Override
     public void delete(T object) {
         if (object != null) {
             object = this.entityManager.merge(object);
@@ -38,6 +45,7 @@ public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
     }
 
     @Transactional(readOnly = true)
+    @Override
     public T find(long id) {
         try {
             T result = (T) this.entityManager.find(clazz, id);
@@ -48,6 +56,7 @@ public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
     }
 
     @Transactional(readOnly = true)
+    @Override
     public List<T> findAll() {
         CriteriaQuery cq = this.entityManager.getCriteriaBuilder().createQuery();
         cq.select(cq.from(clazz));
@@ -55,6 +64,21 @@ public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
 
     }
 
+    @Transactional(readOnly = true)
+    @SuppressWarnings("unchecked")
+    public List<T> findByField(String field, String data) {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<T> cQuery = builder.createQuery(clazz);
+        Root<T> from = cQuery.from(clazz);
+        CriteriaQuery<T> select = cQuery.select(from);
+        Expression<String> name = from.get(field);
+        Predicate eq = builder.equal(name, data);
+        select.where(eq);
+        TypedQuery typedQuery = this.entityManager.createQuery(select);
+        return typedQuery.getResultList();
+    }
+
+    @Override
     public Class getEntityClass() {
         return this.clazz;
     }

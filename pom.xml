@@ -128,7 +128,7 @@
                 <configuration>
                     <url>${deployUrl}</url>
                     <server>tomcat</server>
-                    <path>/spring_11</path>
+                    <path>/elo_maven</path>
                 </configuration>
             </plugin>
             <!-- Maven compiler plugin -->
@@ -142,7 +142,7 @@
         </plugins>
     </build>
     <properties>
-        <skipTests>false</skipTests>
+        <skipTests>true</skipTests>
         <deployUrl>http://127.0.0.1:8080/manager</deployUrl>
     </properties>
 </project>

@@ -14,14 +14,15 @@
         </div>
         <p:panel header="What do you do?">
             <h:form>
-                <ul>
-                    <li>
-
-                        <p:commandLink value="INSERTAR UN JUEGO"
-                                       action="insert"
-                                       ajax="false"/>
-                    </li>
-                </ul>
+                <h:panelGrid columns="2">
+                    <p:commandButton value="Agregar un jugador"
+                                     action="add_player"
+                                     ajax="false"/>
+                    
+                    <p:commandButton value="Agregar una batalla"
+                                     action="add_battle"
+                                     ajax="false"/>
+                </h:panelGrid> 
             </h:form>    
         </p:panel>
 

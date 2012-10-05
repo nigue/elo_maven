@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     
-<!--    <import resource="classpath:testContext.xml" />
-    <import resource="classpath:modelContext.xml" />-->
+    <import resource="classpath:modelContext.xml" />
+    
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="com.mysql.jdbc.Driver" 
+          p:url="jdbc:mysql://localhost/elo"
+          p:username="root" 
+          p:password="root" />
     
 </beans>

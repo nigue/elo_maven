@@ -35,6 +35,11 @@ public interface GenericDAO<T extends IdEntity> {
      */
     List<T> findAll();
     /**
+     * Obtiene todos los objetos segun un campo y un dato
+     * @return lista de todos los objetos segun un campo y un dato
+     */
+    List<T> findByField(String field, String data);
+    /**
      * Obtiene la entidad asociada al DAO
      * @return la entidad
      */
