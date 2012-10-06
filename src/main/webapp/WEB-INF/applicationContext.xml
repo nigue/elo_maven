@@ -16,7 +16,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     
     <bean id="addBattleBean"
           class="coreservlets.web.bean.AddBattleBean"
-          scope="request">
+          scope="session">
         <property name="battleDAO" ref="battleDAO"/>
         <property name="playerDAO" ref="playerDAO"/>
         
