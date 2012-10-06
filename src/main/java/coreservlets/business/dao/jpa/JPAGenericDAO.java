@@ -66,6 +66,7 @@ public class JPAGenericDAO<T extends IdEntity> implements GenericDAO<T> {
 
     @Transactional(readOnly = true)
     @SuppressWarnings("unchecked")
+    @Override
     public List<T> findByField(String field, String data) {
         CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
         CriteriaQuery<T> cQuery = builder.createQuery(clazz);
