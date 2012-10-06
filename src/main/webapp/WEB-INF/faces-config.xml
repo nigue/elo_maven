@@ -23,14 +23,11 @@
             <from-outcome>add_battle</from-outcome>
             <to-view-id>/jsf/pages/add-battle.xhtml</to-view-id>
         </navigation-case>
-    </navigation-rule>
-    
-    <navigation-rule>
-        <from-view-id>/jsf/pages/resultados.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>volver</from-outcome>
-            <to-view-id>/jsf/welcome.xhtml</to-view-id>
+            <from-outcome>test</from-outcome>
+            <to-view-id>/jsf/pages/test.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
     
 </faces-config>

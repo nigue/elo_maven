@@ -14,4 +14,12 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
           p:username="root" 
           p:password="root" />
     
+    <bean id="addBattleBean"
+          class="coreservlets.web.bean.AddBattleBean"
+          scope="request">
+        <property name="battleDAO" ref="battleDAO"/>
+        <property name="playerDAO" ref="playerDAO"/>
+        
+    </bean>
+    
 </beans>

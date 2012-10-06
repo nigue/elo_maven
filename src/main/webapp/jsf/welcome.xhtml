@@ -14,13 +14,17 @@
         </div>
         <p:panel header="What do you do?">
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid columns="3">
                     <p:commandButton value="Agregar un jugador"
                                      action="add_player"
                                      ajax="false"/>
-                    
+
                     <p:commandButton value="Agregar una batalla"
                                      action="add_battle"
+                                     ajax="false"/>
+                    
+                    <p:commandButton value="Testear la Aplicacion"
+                                     action="test"
                                      ajax="false"/>
                 </h:panelGrid> 
             </h:form>    
