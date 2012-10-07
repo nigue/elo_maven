@@ -24,6 +24,10 @@
             <to-view-id>/jsf/pages/add-battle.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>view_elo</from-outcome>
+            <to-view-id>/jsf/pages/view-elo.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>test</from-outcome>
             <to-view-id>/jsf/pages/test.xhtml</to-view-id>
         </navigation-case>
