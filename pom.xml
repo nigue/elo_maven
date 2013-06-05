@@ -127,7 +127,7 @@
                 <artifactId>tomcat-maven-plugin</artifactId>
                 <configuration>
                     <url>${deployUrl}</url>
-                    <server>TomcatServer</server>
+                    <server>tomcat</server>
                     <path>/elo_maven</path>
                 </configuration>
             </plugin>
@@ -142,7 +142,7 @@
         </plugins>
     </build>
     <properties>
-        <skipTests>true</skipTests>
+        <skipTests>false</skipTests>
         <deployUrl>http://127.0.0.1:8080/manager</deployUrl>
     </properties>
 </project>
